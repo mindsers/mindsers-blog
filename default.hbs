@@ -43,7 +43,7 @@
                     <nav class="mds-main-menu">
                         <ul>
                             <li>
-                                <a href="/posts/">Blog</a>
+                                <a href="/fr/posts/">Les articles</a>
                                 <div class="mds-main-submenu">
                                     <div class="mds-submenu-column mds-submenu-links">
                                         <ul>
@@ -53,42 +53,42 @@
                                             <li><a href="/topic/finance/">Finance</a></li>
                                         </ul>
                                         <ul class="more-links">
-                                            <li><a href="/uses/">Desk setup</a></li>
-                                            <li><a href="/readings/">Reading list</a></li>
-                                            <li><a href="/reviews/">Coffee shop reviews</a></li>
+                                            <li><a href="/uses/" title="Desk setup - Setup pour du télétravail">Mon setup WFH</a></li>
+                                            <li><a href="/readings/">Liste de lecture</a></li>
+                                            <li><a href="/fr/reviews/">Tests de coffee shop</a></li>
                                         </ul>
                                     </div>
                                     {{> "quick-plan-menu"}}
                                 </div>
                             </li>
-                            <li><a href="https://club.mindsers.blog/">Club</a>
+                            <li><a href="https://nathanaelcherrier.dev/">Mes services</a></li>
+                            <li><a href="https://courses.mindsers.blog/">Les formations</a>
                                 <div class="mds-main-submenu">
                                     <div class="mds-submenu-column mds-submenu-links">
                                         <ul>
-                                            <li><a href="https://club.mindsers.blog/courses">Courses</a></li>
-                                            <li><a href="https://club.mindsers.blog/">Community</a></li>
-                                            <li><a href="https://mindsers.shop/products/session-de-mentoring-pour-developpeurs">Mentoring</a></li>
+                                            <li><a href="https://courses.mindsers.blog">Cours &amp; Formation</a></li>
+                                            <li><a>Communauté</a> <span class="asap-label">Disponible bientôt</span></li>
+                                            <li><a href="https://cal.com/nathanael-cherrier/coaching">Mentorat</a></li>
                                         </ul>
                                         <ul class="more-links">
-                                            {{!-- <li><a href="/membership/posts/">Posts for Mindsers Club only</a></li>
-                                            <li><a href="/membership/additional-contents/">Posts with additional content</a></li> --}}
                                         </ul>
                                     </div>
                                     {{> "quick-plan-menu"}}
                                 </div>
                             </li>
-                            <li><a href="https://mindsers.shop/">Shop</a>
+                            {{!-- <li><a href="https://shop.mindsers.blog/">Boutique</a>
                                 <div class="mds-main-submenu">
                                     <div class="mds-submenu-column mds-submenu-links">
                                         <ul>
-                                            <li><a href="https://mindsers.shop/collections/merchandising/">Merch</a></li>
-                                            <li><a>Prints</a> <span class="asap-label">Available Soon</span></li>
-                                            <li><a>Ebooks</a> <span class="asap-label">Available Soon</span></li>
-                                            <li><a href="https://mindsers.shop/collections/sheets/">Documents</a></li>
+                                            <li><a href="https://shop.mindsers.blog/collections/t-shirts">T-shirts</a></li>
+                                            <li><a>Prints</a> <span class="asap-label">Disponible bientôt</span></li>
+                                            <li><a>Ebooks</a> <span class="asap-label">Disponible bientôt</span></li>
+                                            <li><a href="https://shop.mindsers.blog/collections/sheets/">Documents</a></li>
                                         </ul>
                                     </div>
                                     {{> "quick-plan-menu"}}
-                                </div></li>
+                                </div>
+                            </li> --}}
                         </ul>
                     </nav>
                 </div>
@@ -127,7 +127,7 @@
                         <ul>
                             <li><a class="button highlighted"
                                     href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a></li>
-                            <li><a class="" href="#/search">Search</a></li>
+                            <li><a class="" href="#/search">Recherche</a></li>
                         </ul>
                         {{/if}}
 
@@ -152,48 +152,78 @@
             <div class='mds-container'>
                 <nav class='mds-foot-menu' role='navigation' aria-label='More Links'>
                     <div class='menu-list'>
-                        <h2>More links</h2>
+                        <h2>À propos</h2>
                         <ul>
                             <li>
-                                <a href='https://nathanaelcherrier.dev/developer/'>
-                                    Want a beautiful website too?
+                                <a href='/about/'>
+                                    Pourquoi le Mindsers Blog
                                 </a>
                             </li>
                             <li>
-                                <a href='https://mindsers.blog/about/'>
-                                    About this blog
+                                <a href="https://courses.mindsers.blog/">
+                                    Accèder à l'espace de formation
                                 </a>
                             </li>
+                            {{#unless @member.paid}}
+                            <li>
+                                <a href='#/portal/signup/651696a11b325a0001057753/monthly'>
+                                    S'abonner pour soutenir le blog
+                                </a>
+                            </li>
+                            {{/unless}}
+                            <li>
+                                <a href='#/portal/support'>
+                                    Soutenir le blog en faisant un don
+                                </a>
+                            </li>
+                            <li>
+                                <a href='https://climate.stripe.com/DbPcGa'>
+                                    Nos efforts pour la planète
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='menu-list'>
+                        <h2>Partenaires</h2>
+                        <ul>
+                            <li>
+                                <a href='https://nathanaelcherrier.dev/fr/influencer/'>
+                                    Promouvoir sur nos media
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#'>
+                                    Recruter dans notre communauté (bientôt disponible)
+                                </a>
+                            </li>
+                            <li>
+                                <a href='https://nathanaelcherrier.dev/fr/developer/'>
+                                    Embaucher notre développeur
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='menu-list'>
+                        <h2>Informations légale</h2>
+                        <ul>
                             <li>
                                 <a href='/community-guidelines/'>
-                                    Community Guidelines
+                                    Charte de la communauté
                                 </a>
                             </li>
                             <li>
                                 <a href='/legal-notices/'>
-                                    Legal notices
+                                    Mentions légales
                                 </a>
                             </li>
-                            <li>
+                            {{!-- <li>
                                 <a href="#cookie-consent">
-                                    Cookie consent
+                                    Gestion des cookies
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
-                    <div class='menu-list'>
-                        <h2>Open Sources</h2>
-                        <ul>
-                            <li><a href='https://github.com/mindsers/changelog-reader-action'
-                                    rel='nofollow noreferrer'>Changelog Reader Action</a></li>
-                            <li><a href='https://github.com/mindsers/configfile'
-                                    rel='nofollow noreferrer'>Configfile</a></li>
-                            <li><a href='https://github.com/mindsers/yabf' rel='nofollow noreferrer'>Yabf</a></li>
-                            <li><a href='https://github.com/mindsers/nativetable'
-                                    rel='nofollow noreferrer'>Nativetable</a></li>
-                        </ul>
-                    </div>
-                    <div class='menu-list'>
+                    {{!-- <div class='menu-list'>
                         <h2>Socials</h2>
                         <ul>
                             <li><a href='https://www.instagram.com/mindsers.codes/' title='Instagram' target='_blank'
@@ -217,41 +247,14 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                    <div class='menu-list'>
-                        <h2>Support</h2>
-                        <ul>
-                            <li>Bitcoin:
-                                <span class='coin-address'>bc1qak6nsd0jk45lfdh2hrtpzdgsq6557tvj6kj2nj</span>
-                            </li>
-                            <li>Ethereum:
-                                <span class='coin-address'>0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span>
-                            </li>
-                            <li>Ripple:
-                                <span class='coin-address'>rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span>
-                            </li>
-                            <li>Litecoin:
-                                <span class='coin-address'>ltc1qh959rdkrq7mq0uk7fv9mgkw37rdf5krru4k9du</span>
-                            </li>
-                            <li>Polkadot:
-                                <span class='coin-address'>164giiCvnViHEhA7GZVPZSyHi75v2fjuBWMydyF5r3sK6Lo4
-                            </li>
-                            <li>Elrond:
-                                <span
-                                    class='coin-address'>erd19vgw4yfknr02hq22n7s900w8dxurnc76zykjap3lhlds29yscalq6g7zzk
-                            </li>
-                            <li>Dogecoin:
-                                <span class='coin-address'>DHUoWR6HtZ28gXnyicTNDvBgKcjSWSUaV6
-                            </li>
-                        </ul>
-                    </div>
+                    </div> --}}
                 </nav>
                 <div class='mds-foot-meta'>
                     &copy;2014-{{date format='YYYY'}}
                     <a href='https://nathanaelcherrier.dev/en/'>Nathanaël
-                        Cherrier</a>. All rights reserved.<br />
+                        Cherrier</a>. Tous droits réservés.<br />
                     <a href='/legal-notices/'>
-                        Legal notices
+                        Mentions Légales
                     </a>
                 </div>
             </div>

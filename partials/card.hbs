@@ -16,28 +16,31 @@ Re-usable card for linking to posts
                 {{#has tag="#lang-fr"}}
                 <span class='bull'>&bull;</span>
                 <span>🇫🇷</span>
+                {{else}}
+                <span class='bull'>&bull;</span>
+                <span>🇬🇧</span>
                 {{/has}}
 
                 {{#has tag='#sponsored-post'}}
                 <span class='bull'>&bull;</span>
-                <span class='sponsored-label'>Sponsored</span>
+                <span class='sponsored-label'>Sponsorisé</span>
                 {{/has}}
 
                 {{^has visibility='public'}}
                     <span class='bull'>&bull;</span>
                     {{#has tag="#additional-content"}}
-                    <span class='premium-label'>Additional Content</span>
+                    <span class='premium-label'>Contenu Additionnel</span>
                     {{else has visibility="members"}}
-                    <span class='member-label'>Member Only</span>
+                    <span class='member-label'>Réservé aux membres</span>
                     {{else}}
-                    <span class='premium-label'>Mindsers Club Only</span>
+                    <span class='premium-label'>Réservé au élèves</span>
                     {{/has}}
                 {{/has}}
             </span>
             <h2 class='mds-card-title' {{#has tag="#lang-fr"}}lang="fr" {{/has}}>{{title}}</h2>
             <p {{#has tag="#lang-fr"}}lang="fr" {{/has}}>{{excerpt}}...</p>
             <strong class='cta'>
-                Read more &rarr;
+                Continuer à lire &rarr;
             </strong>
         </div>
     </a>

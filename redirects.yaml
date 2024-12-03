@@ -1,14 +1,18 @@
 301:
     # new hubs
-    /en/: /posts/
-    /fr/: /fr/posts/
-    /post/: /posts/
-    /fr/post/: /fr/posts/
-    /issue/: /issues/
-    /fr/issue/: /fr/issues/
-    /email/: /emails/
+    ^\/posts\/$: /en/posts/
+    ^\/en\/$: /en/posts/
+    ^\/post\/$: /en/posts/
+    ^\/en/post\/$: /en/posts/
+    ^\/fr/post\/$: /fr/posts/
+    ^/issue/: /en/issues/
+    ^/issues/: /en/issues/
+    ^/fr/issue/: /fr/issues/
+    ^/review/: /en/reviews/
+    ^/reviews/: /en/reviews/
+    ^/email/: /emails/
     # pages
-    /membership/exclusive-content/: /membership/posts/
+    /membership/exclusive-content/: https://courses.mindsers.blog
     /topic/c/: /topic/c-language/
     /topic/encvid/: /topic/portfolio/
     /reviews/test-le-kitchen-cafe-lyon/: /review/test-le-kitchen-cafe-lyon/
@@ -48,6 +52,11 @@
     /2016/11/23/decomposition-et-destructuration-en-javascript/: /fr/post/decomposition-et-destructuration-en-javascript/
     /2015/12/15/swift-les-closures/: /fr/post/swift-les-closures/
     # old content
+    /fr/linting-good-practices/: /fr/post/linting-good-practices/
+    /en/javascript-named-imports-vs-default-imports/: /en/post/javascript-named-imports-vs-default-imports/
+    /en/remote-work-desk-setup-2019/: /en/post/remote-work-desk-setup-2019/
+    /fr/pointeurs-c-cplusplus/: /fr/post/pointeurs-c-cplusplus/
+    /posts/learn-javascript-variables/#the-const-keyword: /en/post/learn-javascript-variables/#the-const-keyword
     /fr/post/travel-dev-life-budapest/: /fr/post/coder-digital-nomad-travel-budapest/
     /fr/bonjour-tout-le-monde/: https://nathanaelcherrier.dev/fr/
     /fr/post/ghost-ngnix-how-to/: /fr/post/ghost-nginx-how-to/
@@ -66,18 +75,23 @@
     /tag/findabike/: /topic/portfolio/
     /tag/design-patterns/: /topic/best-practices/
     /tag/application-design/: /topic/ddd/
-    /en/rss/: /posts/rss/
+    /en/rss/: /en/posts/rss/
     /fr/rss/: /fr/posts/rss/
-    /en/pricing/: /membership/
-    /fr/pricing/: /membership/
-    /fr/membership/: /membership/
-    /en/membership/: /membership/
+    /en/pricing/: https://courses.mindsers.blog
+    /fr/pricing/: https://courses.mindsers.blog
+    /fr/membership/: https://courses.mindsers.blog
+    /en/membership/: https://courses.mindsers.blog
     /to-be-read/: /readings/
     /fr/uses/: /uses/
     # dynamics
     ^\/tag\/(.+)$: /topic/$1
-    ^\/en\/(.+)$: /post/$1
-    ^\/fr\/(?!posts?\/)(?!issues?\/)(?!reviews?\/)(.+)$: /fr/post/$1
+    ^\/post\/(.+)$: /en/post/$1
+    ^\/review\/(.+)$: /en/review/$1
+    ^\/issue\/(.+)$: /en/issue/$1
+    ^\/fr\/issues\/(?!rss)(?!page)(.+)$: /fr/issue/$1
+    ^\/fr\/reviews\/(?!rss)(?!page)(.+)$: /fr/review/$1
+    ^\/fr\/posts\/(?!rss)(?!page)(.+)$: /fr/post/$1
+    ^\/page\/(.+)$: /fr/posts/page/$1
 302:
     /tag/currency/: /posts/
     /tag/multilingual/: /posts/

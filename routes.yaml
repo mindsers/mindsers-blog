@@ -5,30 +5,36 @@ routes:
         filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/welcome/: welcome
     /membership/welcome-premium/: welcome-premium
+    /en/readings/:
+        template: page
+        data: page.en-readings
+    /en/uses/:
+        template: page
+        data: page.en-uses
 
 collections:
     /fr/issues/:
         permalink: /fr/issue/{slug}/
         template: index
         filter: tag:hash-newsletter-issue+tag:hash-fr
-    /issues/:
-        permalink: /issue/{slug}/
+    /en/issues/:
+        permalink: /en/issue/{slug}/
         template: index
         filter: tag:hash-newsletter-issue+tag:hash-en
     /fr/reviews/:
         permalink: /fr/review/{slug}/
         template: index
         filter: tag:hash-coffeeshop-review+tag:hash-fr
-    /reviews/:
-        permalink: /review/{slug}/
+    /en/reviews/:
+        permalink: /en/review/{slug}/
         template: index
         filter: tag:hash-coffeeshop-review+tag:hash-en
     /fr/posts/:
         permalink: /fr/post/{slug}/
         template: index
         filter: tag:hash-fr+tag:-[hash-email,hash-newsletter-issue,hash-coffeeshop-review,hash-en]
-    /posts/:
-        permalink: /post/{slug}/
+    /en/posts/:
+        permalink: /en/post/{slug}/
         template: index
         filter: tag:hash-en+tag:-[hash-email,hash-newsletter-issue,hash-coffeeshop-review,hash-fr]
 

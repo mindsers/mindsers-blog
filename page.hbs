@@ -12,7 +12,7 @@
 {{#contentFor 'title'}}{{meta_title}} - {{@site.title}}{{/contentFor}}
 
 {{#post}}
-<article class="mds-page {{post_class}}">
+<article class="mds-page {{post_class}}" {{#has tag="#lang-fr"}}lang="fr"{{/has}}>
 
     {{#match @page.show_title_and_feature_image}}
     <header class="mds-header mds-canvas">

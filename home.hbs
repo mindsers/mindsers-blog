@@ -4,7 +4,7 @@
 
 {{#contentFor 'meta'}}
 <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts"
-    href="{{@site.url}}/posts/rss/">
+    href="{{@site.url}}/en/posts/rss/">
 <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts"
     href="{{@site.url}}/fr/posts/rss/">
 {{/contentFor}}
@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" />
 {{/contentFor}}
 
-{{#contentFor 'title'}}{{meta_title}} - Coding and entrepreneurship stories{{/contentFor}}
+{{#contentFor 'title'}}{{meta_title}}{{/contentFor}}
 
 <div class="mds-home">
     <header class="mds-header">
@@ -21,25 +21,20 @@
             <div class="presentation">
                 <h1 class="mds-title">{{@site.description}}</h1>
                 <p>
-                    I'm Nathanaël (Mindsers) and I wrote hundreds of ressources to share with you everything
-                    I learned from coding to starting a business.
-                </p>
-                <p>
-                    Mindsers Blog started as a developer's personal blog but became an independant publication for
-                    developers. Read about coding, freelance life, remote work, side businesses and finance.
+                    Prêt à explorer l'aventure tech avec style ? Rejoins-nous, et ensemble, faisons de chaque ligne de code une expérience inoubliable !
                 </p>
                 {{#if @member}}
                     {{#unless @member.paid}}
                     <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
                     {{else}}
-                    <a href="/posts/" class="button">Browse posts</a>
+                    <a href="/fr/posts/" class="button">Découvre nos articles</a>
                     {{/unless}}
                 {{else}}
                 <p>
                     {{#if @custom.global_cta_url}}
                     <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
                     {{/if}}
-                    <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Get the newsletter</a>
+                    <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Reçois les articles par mail</a>
                 </p>
                 {{/if}}
             </div>
@@ -56,6 +51,50 @@
             {{> "card"}}
             {{/foreach}}
             {{/get}}
+        </div>
+    </section>
+
+    <section class="post-grid">
+        <div class="mds-container">
+            <h2 class="section-title">
+                Les derniers articles
+                <a class="icon" href="{{@site.url}}/fr/posts/rss/"
+                    title="Suis nos articles en utilisant un lecteur RSS">{{> "icons/rss"}}</a>
+            </h2>
+            <div class="mds-postfeed">
+                {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#foreach posts}}
+                {{> "thumbnail-card"}}
+                {{/foreach}}
+                {{/get}}
+                <div class="more">
+                    <p>Tu veux en lire plus ?</p>
+                    <p><a href="/fr/posts/" class="button primary">Découvre les autres articles</a></p>
+                    <p><a href="/en/posts/" class="button primary" lang="en">Browse posts in English</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlighted-band">
+        <div class="mds-container">
+            {{#if @member}}
+            <h2 class="section-title">
+                Tu peux aller encore plus loins dans l'experience avec les cours et le mentorat du Mindsers Blog
+            </h2>
+            <p>
+                <a href="https://courses.mindsers.blog" class="button">En savoir plus sur nos cours</a>
+                <a href="https://cal.com/nathanael-cherrier/coaching" class="button">En savoir plus sur le mentorat</a>
+            </p>
+            {{else}}
+            <h2 id="newsletter-signup" class="section-title">
+                Rejoins les {{total_members}} membres de notre liste de diffusion et reçois les articles de blog directement dans ta boite mail
+            </h2>
+            <p>
+                <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Inscris-toi gratuitement !</a>
+            </p>
+            <p>Aucun spam. Tu peux te désincrire en un click à tout moment.</p>
+            {{/if}}
         </div>
     </section>
 
@@ -79,66 +118,4 @@
             }}
         </div>
     </section>
-
-    <section class="post-grid">
-        <div class="mds-container">
-            <h2 class="section-title">
-                My last blog posts
-                <a class="icon" href="{{@site.url}}/posts/rss/"
-                    title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
-            </h2>
-            <div class="mds-postfeed">
-                {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
-                    {{#foreach posts}}
-                    {{> "thumbnail-card"}}
-                    {{/foreach}}
-                {{/get}}
-                <div class="more">
-                    <p>Want to read more?</p>
-                    <p><a href="/posts/" class="button primary">Browse all</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="highlighted-band">
-        <div class="mds-container">
-            {{#if @member}}
-            <h2 class="section-title">
-                You can get more of Mindsers Blog with our private club!
-            </h2>
-            <a href="https://club.mindsers.blog/" class="button">Learn more about the club</a>
-            {{else}}
-            <h2 id="newsletter-signup" class="section-title">
-                Join the {{total_members}} members and receive the blog posts straight into your inbox
-            </h2>
-            <p>
-                <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Subscribe for free</a>
-            </p>
-            <p>No spam ever. Unsubscribe in a single click at any time.</p>
-            {{/if}}
-        </div>
-    </section>
-
-    <section class="post-grid">
-        <div class="mds-container">
-            <h2 class="section-title">
-                My last French blog posts
-                <a class="icon" href="{{@site.url}}/fr/posts/rss/"
-                    title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
-            </h2>
-            <div class="mds-postfeed" lang="fr">
-                {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
-                {{#foreach posts}}
-                {{> "thumbnail-card"}}
-                {{/foreach}}
-                {{/get}}
-                <div class="more" lang="en">
-                    <p>Want to read more?</p>
-                    <p><a href="/fr/posts/" class="button primary">Browse all</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 </div>

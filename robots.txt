@@ -5,4 +5,5 @@ Disallow: /p/
 Disallow: /login/
 Disallow: /signup/
 Disallow: /profile/
-Disallow: /membership/welcome/
+Disallow: /membership/
+Allow: /

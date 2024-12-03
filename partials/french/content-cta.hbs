@@ -10,14 +10,18 @@
             réservées aux abonnés de la newsletter.
         </p>
 
-        <a href='/signup/' class='button'>S'inscrire à la newsletter</a>
+        <a href='#/portal/signup' class='button'>S'inscrire à la newsletter</a>
+        {{! <p class='switch'>
+            Déjà membre?
+            <a href='/login/'>Se connecter</a>
+        </p> }}
     {{else}}
         {{#has tag='#additional-content'}}
             <h2>
                 Cet article gratuit contient du contenu supplémentaire pour les
                 membres
                 {{#has visibility='tiers'}}
-                    du Mindsers Club
+                    du Mindsers Courses
                 {{else}}
                     premuim
                 {{/has}}
@@ -31,40 +35,26 @@
                 {{/has}}
                 est réservé aux membres
                 {{#has visibility='tiers'}}
-                    du Mindsers Club
+                    du Mindsers Courses
                 {{else}}
                     premium
                 {{/has}}
             </h2>
         {{/has}}
         <p>
-            Rejoins les
-            {{total_members}}
-            développeurs membres du club, et obtiens un accès complet à notre
-            contenu. Tu pourras aussi lire en avant première tous les nouveaux
-            articles !
+            Rejoins nos élèves, et découvre du contenu exclusif. Tu
+            pourras aussi lire en avant première tous les nouveaux articles !
         </p>
 
-        {{#has visibility='tiers'}}
-            <a href='https://club.mindsers.blog/' class='button'>Je rejoins le
-                Mindsers Club !</a>
-        {{else}}
-            {{#has tag='#issue'}}
-                <a href='/newsletter/' class='plan-link'>Voir les abonnements à
-                    la newsletter</a>
-            {{else}}
-                <a href='https://club.mindsers.blog/' class='plan-link'>Voir les
-                    autres abonnements</a>
-            {{/has}}
-
-            <a href='javascript:' data-portal='signup/monthly' class='button'>
-                S'abonnez maintenant!
+        {{#if @custom.global_cta_url}}
+            <a
+                href='{{@custom.global_cta_url}}'
+                class='button'
+            >{{@custom.global_cta_text}}
             </a>
-        {{/has}}
+        {{else}}
+            <a href='https://courses.mindsers.blog/' class='button'>Je découvre
+                les cours !</a>
+        {{/if}}
     {{/has}}
-
-    <p class='switch'>
-        Déjà membre?
-        <a href='/login/'>Se connecter</a>
-    </p>
 </div>
